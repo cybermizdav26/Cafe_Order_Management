@@ -140,3 +140,9 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DB_NAME = 'postgres'
+DB_PASSWORD = 12
+DB_USER = 'postgres'
+DB_PORT = 5432
+DB_HOST = 'db'

@@ -56,7 +56,14 @@
    - /revenue/ — получение общей выручки (RevenueAPIView).
    - /orders-search/ — поиск заказов с фильтрацией (OrderSearchAPIView).
 ```
-
+## Docker
+   ```bash
+   docker-compose up -p
+   docker-compose exec web pip install -r requirements.txt
+   docker-compose exec web python manage.py migrate
+   docker-compose exec web python manage.py runserver
+```
+   
 ## Конфигурация
 Для настройки приложения используйте файлы конфигурации в директории /config.
 
