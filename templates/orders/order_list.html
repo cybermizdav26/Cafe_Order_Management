@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список заказов</title>
+</head>
+<body>
+    <h1>Список заказов</h1>
+    <a href="{% url 'order_create' %}">Создать новый заказ</a>
+    <ul>
+        {% for order in orders %}
+            <li>
+                <strong>Стол №{{ order.table_number }}</strong> — {{ order.total_price }} руб. ({{ order.get_status_display }})
+                <a href="{% url 'order_detail' order.id %}">Детали</a>
+                <a href="{% url 'order_update' order.id %}">Редактировать</a>
+                <a href="{% url 'order_delete' order.id %}">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
