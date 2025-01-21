@@ -15,10 +15,11 @@
 3. Установите необходимые библиотеки:
     ```bash
     pip install -r requirements.txt
-4. Создайте и примените миграции базы данных:
+4. Создайте и примените миграции базы данных и создать администратора:
     ```bash
    python manage.py makemigrations
    python manage.py migrate
+   python manage.py createsuperuser
 
 5. Запустите приложение
     ```bash
@@ -38,6 +39,23 @@
 Пользователь через интерфейс выбирает заказ по ID и изменяет его статус (“в ожидании”, “готово”, “оплачено”).
 6. Расчет выручки за смену
 Отдельная страница или модуль для расчета общего объема выручки за заказы со статусом “оплачено”.
+
+## API в DRF
+Для просмотра документации API перейдите по адресу:
+````
+   127.0.0.1/swagger/
+````
+Здесь все маршруты
+```
+   - /orders/ — отображение списка заказов (OrderListAPIView).
+   - /menu-create/ — создание новых блюд меню (MenuCreateApiView).
+   - /menu/ — список всех блюд меню (MenuListApiView).
+   - /order-create/ — создание нового заказа (OrderCreateAPIView).
+   - /order-delete<int:pk> — удаление заказа (OrderDeleteAPIView).
+   - /order-update<int:pk> — обновление статуса заказа (OrderUpdateApiView).
+   - /revenue/ — получение общей выручки (RevenueAPIView).
+   - /orders-search/ — поиск заказов с фильтрацией (OrderSearchAPIView).
+```
 
 ## Конфигурация
 Для настройки приложения используйте файлы конфигурации в директории /config.
