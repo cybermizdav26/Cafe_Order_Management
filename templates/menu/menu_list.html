@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+</head>
+<body>
+    <h1>Меню</h1>
+    <a href="{% url 'menu_item_create' %}">Добавить новое блюдо</a>
+    <ul>
+        {% for item in menu_items %}
+            <li>
+                {{ item.name }} — {{ item.price }} руб.
+                <p>{{ item.description }}</p>
+                <a href="{% url 'menu_item_update' item.id %}">Редактировать</a>
+                <a href="{% url 'menu_item_delete' item.id %}">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'order_list' %}">К заказам</a>
+</body>
+</html>

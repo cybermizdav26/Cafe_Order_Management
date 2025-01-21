@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Система управления заказами в кафе</title>
+</head>
+<body>
+    <h1>Добро пожаловать в Систему управления заказами в кафе</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'order_list' %}">Список заказов</a></li>
+            <li><a href="{% url 'menu_list' %}">Меню</a></li>
+            <li><a href="{% url 'revenue_report' %}">Отчет о выручке</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

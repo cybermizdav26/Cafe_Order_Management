@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Редактировать блюдо{% else %}Добавить блюдо{% endif %}</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Редактировать блюдо{% else %}Добавить блюдо{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+    <a href="{% url 'menu_list' %}">Вернуться к меню</a>
+</body>
+</html>
